@@ -1,0 +1,27 @@
+Saber construtos básicos:
+
+class
+main
+variável
+tipos básico
+if/else/for/while/switch case
+int[] 
+
+Estrutura de diretórios:
+
+Pasta da Disciplina
+- projeto1
+  - src
+  - bin
+- projeto2
+...
+- projeton
+
+Exemplo:
+# intro
+ - bin
+ - src
+  # intro
+   - Main.java
+
+

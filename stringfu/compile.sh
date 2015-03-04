@@ -1,0 +1,1 @@
+javac -d bin -cp bin src/stringfu/Main.java
