@@ -1,0 +1,87 @@
+Orientação a Objetos: Introdução
+================================
+
+Todos nós temos a noção de Classe, só que em um contexto estático (sem objetos).
+
+Contexto estático: fluxo dos dados.
+variavel = upper(last(split("frase qualquer"))) == "QUALQUER"
+
+Os dados residem fora dos métodos.
+
+Trabalhar em contexto estático é um modelo de programação.
+
+Paradigma de programação: imperativo e procedimental
+
+Imperativo: por que temos que dar todas as ordens ao computador. Em contraste ao declarativo: declara-se os fatos e o computador resolve perguntas.
+
+Procedimental: funciona com a criação de sub-rotinas (métodos/funções).
+
+Outros paradigmas de programação: programação orientada a eventos, programação funcional, ..., programação orientada a objetos (POO, OOP Object Oriented Programming).
+
+Orientação a Objetos? Pensar que todo código modela um objeto.
+
+A ideia de OO vem de pelo menos quase 30 anos atrás. Busca de um meio diferente de construir programas. Um meio mais modular. Aproximar a programação de uma engenharia. Engenharia de um programa? Ideia de código portável, independente, até então era mais engessado.
+
+Alan Akay
+
+Um dos primeiros pensadores e idealizadores de OO. É um dos pais da interface visual (gráfica). É um campo de pesquisa conhecido como Interação Humano-Computador (HCI Human-Computer Interaction).
+
+Um poderosa ideia sobre ideias
+http://www.ted.com/talks/alan_kay_shares_a_powerful_idea_about_ideas
+
+Liderou o projeto de uma nova linguagem de programação chamada Smalltalk. Foram introduzidos os conceitos de Orientação a Objetos. Existem vários conceitos de OO, várias funcionalidades de OO, mas as linguagens nem sempre implementam tudo. Java, por exemplo, nem tudo é Orientado a Objetos (ex.: int, double, boolean, char, são escalares, não são objetos).
+
+Comercialmente, OO ficou conhecida com as linguagens: C++, C#, Java, Ruby, Python, Perl, ....
+
+Alan Kay pensou OO como células em um organismo vivo. Por que não criar código como células em um organismo e trocam mensagens. O problema é controlar a complexidade! Sistemas complexos. Fazer um sistema complexo aparentar simplicidade.
+
+Complexidade como um sistema de muitas variáveis com muitos detalhes. Uma forma de controlar a complexidade é abstrair.
+
+Abstração: remover os detalhes irrelevantes para tornar viável. Objetos modelam problemas com um nível satisfatório de precisão.
+
+Objetos podem ser vistos de várias formas, uma delas é que eles tem características ou propriedades ou atributos.
+
+Objetos maiores são construídos sobre objetos menores e assim por diante. Cada objeto particular tem suas próprias características. Ex.: resolução da tela do telefone.
+
+Exercício: multiplicação de duas frações (sem objetos)
+
+  public class Fracoes {
+
+    public static int[] multiplica(int[] a, int[] b) {
+      return new int[] { a[0] * b[0], a[1] * b[1] };
+    }
+
+    public static void main(String[] args) {
+      int[] a = {2, 3};
+      int[] b = {3, 5};
+      int[] r = multiplica(a, b);
+      System.out.println(r[0] == 6);
+      System.out.println(r[1] == 15);
+    }
+
+  }
+
+Objetos podem ser usados para carregar dados, por exemplo carregar o numerador e denominador de uma Fracao. Frequentemente objetos substituem vetores.
+
+O mesmo exercício resolvido com objetos:
+
+  public static void main(String[] args) {
+      Fracao a = new Fracao();
+      a.numerador = 2;
+      a.denominador = 3;
+
+      Fracao b = new Fracao();
+      b.numerador = 3;
+      b.denominador = 5;
+
+      Fracao r = multiplica(a, b);
+
+      System.out.println(r.numerador == 6);
+      System.out.println(r.denominador == 15);
+  }
+
+  public class Fracao {
+      public int numerador = 1;
+      public int denominador = 1;
+  }
+
