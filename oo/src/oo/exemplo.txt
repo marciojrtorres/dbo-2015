@@ -1,0 +1,29 @@
+class Op1 {
+  public static int soma(int a, int b) {
+    return a + b;
+  }
+}
+
+println(Op1.soma(2, 3)); // 5
+
+class Op2 {
+  int a;
+  public Op2(int a) { this.a = a; }
+  public int soma(int b) {
+    return a + b;
+  }
+}
+Op2 op2 = new Op2(2);
+println(op2.soma(3)); // 5
+
+class Op3 {
+  int a, b;
+  public Op3(int a, int b){
+    this.a = a;
+    this.b = b;
+  }
+
+  public int soma() {
+    return a + b;
+  }
+}
