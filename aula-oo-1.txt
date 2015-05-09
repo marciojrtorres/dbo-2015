@@ -1,0 +1,39 @@
+Orientação a Objetos: continuação
+=================================
+
+Escopo das variáveis: sempre o menor possível. Por exemplo, se uma variável é útil para apenas um método ela deve ser local no método.
+
+Usar o this antes dos atributos quanto houve variável com o mesmo nome localmente (no método).
+
+Conceitos de OO estudados até o momento:
+----------------------------------------
+Classe e Objeto:
+Classe é a mesma coisa que objeto? Não.
+Qual a diferença entre classe e objeto?
+Classe é a descrição a definição de características e também de operações de um objeto. Classe é um Tipo. Objetos são instancias de uma classe, é a concretização do tipo.
+
+O que são atributos? características de um objeto. São definidos pelos campos (variáveis e constantes).
+
+O que são operações? o que o objeto faz. Comandos dados ao objeto. São definidos como métodos.
+
+Alguns métodos transformam outros consultam. Métodos que fazer alterações e métodos que apenas leem as informações.
+
+Qual a utilidade de construtores? é um meio de definir obrigatoriedade de parâmetros que são validados! Serve para impor regras e manter o objeto válido.
+
+Qual a importância do método toString? mostrar um objeto como um texto.
+
+Outros conceitos de Orientação a Objetos
+========================================
+Mutabilidade: o objeto muda o estado (valor de seus atributos). Quando os atributos não são final.
+
+Estado: valor atual dos atributos (características) de um objeto.
+
+Comando: altera o estado do objeto, mas não retorna nada. Métodos void, por exemplo "aquece".
+
+Consulta: consultar o estado, o valor dos atributos. Método com retorno.
+
+Encapsulamento: ocultamento de informações internas dos objetos. Filtro das ações possíveis que permitam a alteração do estado. Por exemplo, evitar que um atributo seja alterado diretamente.
+
+Objetos podem ser comparados: igualdade, menor, maior. São comparados segundo seus valores ou segundo sua identidade. Objetos são de valor ou entidades (quanto tem identidade).
+
+Para tornar os objetos comparáveis devemos implementar equals(Object):boolean.
