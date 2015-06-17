@@ -7,6 +7,7 @@ public class Mural {
 	
 	private ArrayList<String> mensagens =
 			new ArrayList<String>();
+	
 	public final Route novaMensagem = new NovaMensagem();
 	public final Route mostraMensagens = new MostraMensagens();
 		
