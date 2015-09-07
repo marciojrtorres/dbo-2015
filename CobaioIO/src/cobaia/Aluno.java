@@ -5,23 +5,22 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Aluno {
-
-	private int matricula;
+public class Aluno extends Model {
+	
 	private String nome;
 	private String sobrenome;
 	private Date dataNascimento;
 	
+	public void setMatricula(int matricula) {
+		this.id = matricula;
+	}
+	
+	public int getMatricula() {
+		return this.id;
+	}
+	
 	private DateFormat dateFormat =
 			DateFormat.getDateInstance();
-
-	public int getMatricula() {
-		return matricula;
-	}
-
-	public void setMatricula(int matricula) {
-		this.matricula = matricula;
-	}
 
 	public String getNome() {
 		return nome;
@@ -51,7 +50,7 @@ public class Aluno {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + matricula;
+		result = prime * result + id;
 		return result;
 	}
 
@@ -64,21 +63,30 @@ public class Aluno {
 		if (getClass() != obj.getClass())
 			return false;
 		Aluno other = (Aluno) obj;
-		if (matricula != other.matricula)
+		if (id != other.id)
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Aluno [matricula=" + matricula + ", nome=" + nome + ", sobrenome=" + sobrenome + ", dataNascimento="
+		return "Aluno [matricula=" + id + ", nome=" + nome + ", sobrenome=" + sobrenome + ", dataNascimento="
 				+ dataNascimento + "]";
+	}
+	
+	public void fromCSV(String row) {
+		// 11030226;Ana Flávia;Moraes;02/07/1999
+		String[] columns = row.split(";");
+		this.setId(Integer.parseInt(columns[0]));
+		this.setNome(columns[1]);
+		this.setSobrenome(columns[2]);
+		this.setDataNascimento(columns[3]);
 	}
 
 	public String toCSV() {
 		StringBuilder builder = new StringBuilder();
 		// 11030226;Ana Flávia;Moraes;02/07/1999
-		builder.append(matricula);
+		builder.append(id);
 		builder.append(";");
 		builder.append(nome);
 		builder.append(";");
