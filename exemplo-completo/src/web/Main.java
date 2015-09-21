@@ -1,7 +1,9 @@
 package web;
 
+import controlador.ListaControlador;
 import controlador.NovoControlador;
 import controlador.PaginaInicialControlador;
+import controlador.SalvaControlador;
 import spark.Spark;
 import spark.template.mustache.MustacheTemplateEngine;
 
@@ -27,7 +29,19 @@ public class Main {
 		NovoControlador novoControlador = 
 				new NovoControlador();
 		
+		// abrir o form
 		Spark.get("/novo", novoControlador, engine);
+		
+		SalvaControlador salvaControlador =
+				new SalvaControlador();
+		
+		// submissão do form
+		Spark.post("/salva", salvaControlador, engine);
+		
+		ListaControlador listaControlador =
+				new ListaControlador();
+		
+		Spark.get("/lista", listaControlador, engine);
 		
 		
 	}

@@ -7,23 +7,28 @@
 	<h1>
 		Novo Filme
 	</h1>
-	
-	<form method="post">
+	<!-- isto é um comentário HTML   -->
+	<form method="post" action="/salva">
 		<input type="number" name="numero"
-			placeholder="Numero do Filme"
+			min="1" placeholder="Numero do Filme"
 			autofocus>
 		<br>
 		<input type="text" name="titulo"
-			placeholder="Titulo do Filme">
-		<br>	
-		<input type="text" name="genero"
-			placeholder="Genero do Filme">
-		<br>	
+			placeholder="Titulo do Filme" required>
+		<br>
+		<input list="generos" name="genero">
+		<datalist id="generos">
+			<option value="Ação">
+			<option value="Suspense">
+			<option value="Comédia">
+		</datalist>
+		<br>
 		<input type="number" name="ano"
+			min="1980" max="2100"
 			placeholder="Ano do Filme">
 		<br>
-		<input type="submit" value="Salvar">	
-	</form>	
+		<input type="submit" value="Salvar">
+	</form>
 
 
 </body>
