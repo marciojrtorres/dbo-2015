@@ -12,7 +12,11 @@ public class NovoControlador
 
 	@Override
 	public ModelAndView handle(Request req, Response resp) {		
-		return new ModelAndView(null, "filme_cadastrar.html");
+		HashMap mapa = new HashMap();
+		if (req.queryParams("erro") != null) { // existe um parâmetro erro
+			mapa.put("erro", req.queryParams("erro"));
+		}
+		return new ModelAndView(mapa, "filme_cadastrar.html");
 	}
 
 }
