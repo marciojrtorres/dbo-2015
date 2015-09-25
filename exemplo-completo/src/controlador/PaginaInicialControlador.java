@@ -9,8 +9,7 @@ public class PaginaInicialControlador
 	implements TemplateViewRoute {
 
 	@Override
-	public ModelAndView handle(Request req, Response resp) {
-		
+	public ModelAndView handle(Request req, Response resp) {		
 		return new ModelAndView(null, "index.html");
 	}
 

@@ -1,15 +1,21 @@
 package web;
 
+import controlador.ExcluiControlador;
 import controlador.ListaControlador;
 import controlador.NovoControlador;
 import controlador.PaginaInicialControlador;
 import controlador.SalvaControlador;
+import spark.Filter;
+import spark.Request;
+import spark.Response;
 import spark.Spark;
 import spark.template.mustache.MustacheTemplateEngine;
 
 public class Main {
 	
 	public static void main(String[] args) {
+		
+		
 		
 		// precisa de um package publico (pub)
 		// onde ficam os css, js, imgs, conteúdo fixo
@@ -43,7 +49,12 @@ public class Main {
 		
 		Spark.get("/lista", listaControlador, engine);
 		
+		ExcluiControlador excluiControlador = 
+				new ExcluiControlador();
 		
+		Spark.get("/exclui/:numero", excluiControlador, engine);
+		
+				
 	}
 
 }

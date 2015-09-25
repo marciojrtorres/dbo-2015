@@ -1,0 +1,10 @@
+Ações que envolvem parâmetros
+=============================
+
+Por exemplo: EXCLUIR!
+
+Adicionar uma rota parametrizada, por exemplo:
+Spark.get("/exclui/:numero", excluiControlador, engine);
+
+Neste caso :numero é o parâmetro que é resgatado no controlador com:
+req.params("numero")

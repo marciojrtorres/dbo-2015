@@ -55,6 +55,8 @@ public class FilmeDAO implements DAO<Filme> {
 			
 			Scanner scan = new Scanner(arq);
 			String linha = scan.nextLine();
+			scan.close();
+			
 			String[] colunas = linha.split(";");
 			
 			Filme f = new Filme();
@@ -87,6 +89,7 @@ public class FilmeDAO implements DAO<Filme> {
 			for (File arq : arqs) { // for each
 				Scanner scan = new Scanner(arq);
 				String linha = scan.nextLine();
+				scan.close();
 				String[] colunas = linha.split(";");
 				
 				Filme f = new Filme();

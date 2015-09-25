@@ -1,5 +1,7 @@
 package controlador;
 
+import java.util.HashMap;
+
 import spark.ModelAndView;
 import spark.Request;
 import spark.Response;

@@ -3,10 +3,19 @@
 <head>
 	<meta charset="utf-8">
 </head>
-<body>
+<body>	
+
 	<h1>
 		Novo Filme
-	</h1>
+	</h1>	
+	
+	{{#erro}}
+	<div style="background-color: #FFAAAA">
+		{{erro}}
+	</div>
+	{{/erro}}
+	
+	
 	<!-- isto é um comentário HTML   -->
 	<form method="post" action="/salva">
 		<input type="number" name="numero"

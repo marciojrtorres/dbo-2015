@@ -8,6 +8,7 @@ import persistencia.FilmeDAO;
 import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
+import spark.Spark;
 import spark.TemplateViewRoute;
 
 public class ListaControlador 
@@ -19,8 +20,7 @@ public class ListaControlador
 	public ModelAndView handle(Request req, Response resp) {
 		ArrayList<Filme> filmes = dao.findAll();
 		HashMap mapa = new HashMap();
-			  // variável html // variável java
-		mapa.put("filmes", filmes);				
+		mapa.put("filmes", filmes);		
 		return new ModelAndView(mapa, "filme_lista.html");
 	}
 
