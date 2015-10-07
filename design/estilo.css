@@ -1,0 +1,40 @@
+h1 {
+  font-size: 14pt;
+  font-family: "Arial", "Verdana";
+  text-align: center;
+}
+
+p {
+  margin-left: 10px;
+}
+/* . significa class */
+.negrito {
+  font-weight: bold;
+}
+
+.atencao {
+  background-color: lime;
+}
+
+h1.vermelho {
+  color: #FFD900;
+  background-color: rgb(200, 20, 10);
+  border-style: solid;
+}
+
+label {
+  margin-top: 20px;
+  display: block;
+}
+
+input {
+  border: 1px solid gray;
+}
+
+input:focus {
+  border: 1px solid orange;
+}
+
+p:hover {
+  color: blue;
+}
