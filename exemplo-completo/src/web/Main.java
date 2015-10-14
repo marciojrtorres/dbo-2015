@@ -1,10 +1,12 @@
 package web;
 
 import controlador.ExcluiControlador;
+import controlador.FotoControlador;
 import controlador.ListaControlador;
 import controlador.NovoControlador;
 import controlador.PaginaInicialControlador;
 import controlador.SalvaControlador;
+import controlador.UploadController;
 import spark.Filter;
 import spark.Request;
 import spark.Response;
@@ -15,11 +17,9 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		
-		
 		// precisa de um package publico (pub)
 		// onde ficam os css, js, imgs, conteúdo fixo
-		Spark.staticFileLocation("/publico");
+		Spark.staticFileLocation("/pub");
 		
 		// precisa de um package apresentacao (views)
 		// onde ficam os HTML's
@@ -54,6 +54,12 @@ public class Main {
 		
 		Spark.get("/exclui/:numero", excluiControlador, engine);
 		
+		// Spark.post("/arquivo", new UploadController());
+		
+		FotoControlador upador =
+				new FotoControlador();
+		
+		Spark.post("/recebefoto", upador);
 				
 	}
 
